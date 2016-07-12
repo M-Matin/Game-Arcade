@@ -16,7 +16,8 @@ $(document).ready(function() {
 
 var Enemy = function(_y, _v) {
     this.sprite = 'images/enemy-bug.png';
-    this.x = randomInt(-1000, -100);
+    // this.x = randomInt(-1000, -100);
+    this.x = Math.floor(Math.random() * (-100 - 1000 + 1) - 1000);
     this.y = _y;
     this.height = 50;
     this.width = 50;
@@ -25,8 +26,9 @@ var Enemy = function(_y, _v) {
 
 Enemy.prototype.update = function(dt) {
     this.x = this.x + this.speed * dt;
-    if (canvas.width < this.x ) {
-        this.x = randomInt(-2000, -100);
+    if (canvas.width < this.x) {
+     //    this.x = randomInt(-2000, -100);
+     this.x = Math.floor(Math.random() * (-100 - 1000 + 1) - 1000);
     }
 };
 
@@ -34,7 +36,9 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-var Enemies = function() { this.randomEnemy = []; };
+var Enemies = function() {
+    this.randomEnemy = [];
+};
 
 Enemies.prototype.generate = function(number) {
     for (var i = 0; i < number; i++) {
@@ -56,24 +60,39 @@ Enemies.prototype.reset = function() {
 var enemies = new Enemies();
 
 
-var Gem = function(_X, _y) {
+var Gem = function(_X, _Y) {
     var gemArray = ['gem-green.png', 'gem-orange.png', 'gem-blue.png'];
     this.sprite = 'images/' + gemArray[randomInt(0, 2)];
     this.height = 50;
     this.width = 50;
     this.x = _X;
-    this.y = _y;
+    this.y = _Y;
+
+    // Set the original position of the Gem
+    // This does not change throughout one game
+    this.ox = _X;
+    this.oy = _Y;
 };
 
 
-Gem.prototype.render = function() { ctx.drawImage(Resources.get(this.sprite), this.x, this.y);};
-Gem.prototype.clear  = function() { this.x = -100;};
-Gem.prototype.reset  = function() { gem = new Gem();};
+Gem.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+Gem.prototype.clear = function() {
+    this.x = -100;
+};
+Gem.prototype.reset = function() {
+    // gem = new Gem();
+    this.x = this.ox;
+    this.y = this.oy;
+};
 
 var gem = new Gem();
 
 
-var Gems = function() { this.gemsArray = []; };
+var Gems = function() {
+    this.gemsArray = [];
+};
 
 Gems.prototype.generate = function(int) {
     for (var i = 0; i < int; i++) {
@@ -196,10 +215,16 @@ var Stats = function() {
 
 
 Stats.prototype.render = function() {};
-Stats.prototype.updateLevel = function(level) { this.currentLevel = level;};
-Stats.prototype.updateRecord = function() { this.record = this.record + 100;};
+Stats.prototype.updateLevel = function(level) {
+    this.currentLevel = level;
+};
+Stats.prototype.updateRecord = function() {
+    this.record = this.record + 100;
+};
 Stats.prototype.lives = function() {};
-Stats.prototype.updateLives = function(lives) { this.currentLives = lives; };
+Stats.prototype.updateLives = function(lives) {
+    this.currentLives = lives;
+};
 Stats.prototype.updateGems = function() {
     this.numberOfGems++;
     this.record = this.record + 300;
@@ -215,7 +240,12 @@ Stats.prototype.reset = function() {
 var stats = new Stats();
 
 document.addEventListener('keydown', function(e) {
-    var keysToPlay = { 37: 'left', 38: 'up', 39: 'right', 40: 'down'};
+    var keysToPlay = {
+        37: 'left',
+        38: 'up',
+        39: 'right',
+        40: 'down'
+    };
 
     if (stop === false) {
         player.handleInput(keysToPlay[e.keyCode]);
