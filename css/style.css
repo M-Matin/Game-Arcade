@@ -1,3 +1,77 @@
 body {
+    background: #c80fa0;
     text-align: center;
+}
+canvas {
+    width: 90%;
+    height: 90%;
+    transition: all 1s linear;
+}
+@media only screen and (min-width: 800px) {
+    canvas {
+        margin-top: 10px;
+        height: 707px;
+        width: 707px;
+    }
+}
+a:hover {
+    cursor: pointer;
+}
+.heading {
+    color: #fff;
+    font-family: ArcadeClassic;
+}
+.button {
+    border-radius: 3px;
+    display: inline-block;
+    padding: 6px 40px;
+    margin: 65px;
+    background: #000000;
+    font-family: ArcadeClassic;
+    color: #fff;
+    font-size: 29px;
+    letter-spacing: 1px;
+}
+.button:hover {
+    opacity: 0.95;
+}
+.overlay {
+    background: #c80fa0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+.overlay> .wrapper {
+    margin: auto;
+}
+.hidden {
+    display: none;
+}
+.restart > .wrapper {
+    max-width: 800px;
+    margin-bottom: 0;
+    padding: 12% 10%;
+}
+.restart .Game-over {
+    font-size: 100px;
+    margin-bottom: 0;
+}
+.restart .record {
+    color: #fff;
+    font-family: ArcadeClassic;
+    font-size: 20px;
+}
+.restart .record span {
+    margin-left: 5px;
+    font-size: 24px;
+}
+.restart img {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    left: 0;
+    margin: auto;
 }
