@@ -5,8 +5,11 @@ This is a basic game project, designed by [Udacity Frontend Nanodegree](https://
 The **main character** of this game is supposed to reach the water in each level. If main character hit the **enemy** for 5 times, she will be game over.
 There are also **Gems** as an extra power for **main character** which are not active yet!
 
+
 ## Play the Game
-[Play](https://m-matin.github.io/Game-Arcade/)
+To play the game you just need to use `up`, `down`, `left`, `right` arrows to move the character.
+
+You want to play? Start from [Here](https://m-matin.github.io/Game-Arcade/) 
 
 ## Characters
 ### Main Character
