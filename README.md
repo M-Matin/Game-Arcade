@@ -11,7 +11,7 @@ To play the game you just need to use `up`, `down`, `left`, `right` arrows to mo
 
 You want to play? Start from [Here](https://m-matin.github.io/Game-Arcade/) 
 
-## Characters
+## Items:
 ### Main Character
 ![Main Character](https://github.com/M-Matin/Game-Arcade/blob/gh-pages/images/char-pink-girl.png?raw=true)
 ### Enemy
