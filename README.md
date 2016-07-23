@@ -1,5 +1,5 @@
 #  Arcade Game: Bugs!
-This is a basic game project, designed by [Udacity Frontend Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001). This game is designed to practice on **JavaScript Object Oriented** and **HTML 5 Canves**.
+This is a basic game project, designed by [Udacity Frontend Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001). This game is designed to practice on **Practice on JavaScript Object Oriented** and **HTML 5 Canves**.
 
 ## How to play this game?
 The **main character** of this game is supposed to reach the water in each level. If main character hit the **enemy** for 5 times, she will be game over.
